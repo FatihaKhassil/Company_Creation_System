@@ -1,9 +1,9 @@
 [project]
 name = "company_creation"
 authors = [
-    { name = "Fatiha Khassil", email = "fatiha.khassil1@gmail.com"}
+    { name = "Fatiha khassil", email = "fatiha.khassil1@gmail.com"}
 ]
-description = "Company Creation"
+description = "Custom app to handle company formation requests"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

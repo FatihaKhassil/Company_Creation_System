@@ -1,7 +1,7 @@
 app_name = "company_creation"
 app_title = "Company Creation"
-app_publisher = "Fatiha Khassil"
-app_description = "Company Creation"
+app_publisher = "Fatiha khassil"
+app_description = "Custom app to handle company formation requests"
 app_email = "fatiha.khassil1@gmail.com"
 app_license = "mit"
 
