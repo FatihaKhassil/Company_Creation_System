@@ -5,6 +5,30 @@ app_description = "Custom app to handle company formation requests"
 app_email = "fatiha.khassil1@gmail.com"
 app_license = "mit"
 
+doctype_js = {
+    "CompanyCreationRequest": "company_creation/public/js/company_creation_request.js"
+}
+
+app_include_css = [
+    "assets/company_creation/css/extraction_styles.css"
+]
+
+app_include_js = [
+    "assets/company_creation/js/extraction_wizard.js",
+    "assets/company_creation/js/annotation_tool.js"
+]
+
+website_include_js = [
+    "/assets/company_creation/js/pdf_upload.js"
+]
+
+website_route_rules = [
+    {"from_route": "/document_extraction_dashboard", "to_route": "document_extraction_dashboard"}
+]
+
+
+
+
 # Apps
 # ------------------
 

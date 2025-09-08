@@ -1,0 +1,10 @@
+{
+  "title": "Extracteur PDF",
+  "route": "pdf-extractor",
+  "description": "Page pour extraire les données d'un PDF",
+  "icon": "octicon octicon-file",
+  "type": "page",
+  "module": "Company Creation"
+}
+
+
