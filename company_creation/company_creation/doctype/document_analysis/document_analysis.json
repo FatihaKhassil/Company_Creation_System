@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-01 15:02:39.542654",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "document_name",
+  "column_break_huur",
+  "document_type",
+  "section_break_extg",
+  "status",
+  "column_break_zyul",
+  "confidence_score",
+  "section_break_glow",
+  "extracted_fields"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Data",
+   "label": "Document name"
+  },
+  {
+   "fieldname": "column_break_huur",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Data",
+   "label": "Document type"
+  },
+  {
+   "fieldname": "section_break_extg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Statut",
+   "options": "Draft\nIn Progress\nCompleted\nFailed"
+  },
+  {
+   "fieldname": "column_break_zyul",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "confidence_score",
+   "fieldtype": "Percent",
+   "label": "Confidence Score"
+  },
+  {
+   "fieldname": "section_break_glow",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "extracted_fields",
+   "fieldtype": "Table",
+   "label": "Extracted Fields",
+   "options": "Extracted Data Item",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-04 19:52:28.346091",
+ "modified_by": "Administrator",
+ "module": "Company Creation",
+ "name": "Document Analysis",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-13 13:08:35.353671",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "openai_api_key",
+  "column_break_fovz",
+  "openai_model",
+  "section_break_tkfm",
+  "temperature",
+  "column_break_pakf",
+  "max_tokens",
+  "section_break_yjta",
+  "custom_prompt_general",
+  "column_break_knll",
+  "custom_prompt_targeted",
+  "section_break_yure",
+  "doctypes_autorises"
+ ],
+ "fields": [
+  {
+   "fieldname": "openai_api_key",
+   "fieldtype": "Password",
+   "label": "Open_IA_Key"
+  },
+  {
+   "fieldname": "column_break_fovz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "openai_model",
+   "fieldtype": "Select",
+   "label": "Open_IA_model",
+   "options": "gpt-4o-mini\nngpt-4o\nngpt-3.5-turbo"
+  },
+  {
+   "fieldname": "section_break_tkfm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0.1",
+   "fieldname": "temperature",
+   "fieldtype": "Float",
+   "label": "Temperature"
+  },
+  {
+   "fieldname": "column_break_pakf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "max_tokens",
+   "fieldtype": "Int",
+   "label": "Max_tokens"
+  },
+  {
+   "fieldname": "section_break_yjta",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "custom_prompt_general",
+   "fieldtype": "Small Text",
+   "label": "Custom_prompt_general"
+  },
+  {
+   "fieldname": "column_break_knll",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "custom_prompt_targeted",
+   "fieldtype": "Small Text",
+   "label": "Custom_prompt_targeted"
+  },
+  {
+   "fieldname": "section_break_yure",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "doctypes_autorises",
+   "fieldtype": "Table",
+   "label": "Doctypes autorises",
+   "options": "PDF Extraction Allowed Doctype"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-09-13 13:22:13.211267",
+ "modified_by": "Administrator",
+ "module": "Company Creation",
+ "name": "PDF Extraction Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

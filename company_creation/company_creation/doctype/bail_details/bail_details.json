@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-11 12:59:48.305174",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nom_proprietaire",
+  "cin_proprietaire",
+  "loyer",
+  "duree_bail",
+  "bail_pdf"
+ ],
+ "fields": [
+  {
+   "fieldname": "nom_proprietaire",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom du propri\u00e9taire"
+  },
+  {
+   "fieldname": "cin_proprietaire",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "label": "CIN du propri\u00e9taire"
+  },
+  {
+   "fieldname": "loyer",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Loyer mensuel (en DHS)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "duree_bail",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Dur\u00e9e du bail"
+  },
+  {
+   "fieldname": "bail_pdf",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Contrat de bail (PDF)"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-11 13:10:58.108181",
+ "modified_by": "Administrator",
+ "module": "Company Creation",
+ "name": "Bail details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,273 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-23 22:08:04.669155",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_r2rn",
+  "nom_societe_1",
+  "nom_societe_2",
+  "nom_societe_3",
+  "raison_sociale",
+  "forme_juridique",
+  "capital_social",
+  "activite",
+  "adresse_siege",
+  "type_adresse",
+  "bail_details",
+  "company_duration",
+  "founder_name",
+  "nationality",
+  "quality",
+  "telephone_founder",
+  "date_lieu_naissance",
+  "address_founder",
+  "cin_founder",
+  "associes",
+  "notary_info",
+  "date_certificat",
+  "ville",
+  "date_creation",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_r2rn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "nom_societe_1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la soci\u00e9t\u00e9-choix 1",
+   "no_copy": 1,
+   "print_hide": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "nom_societe_2",
+   "fieldtype": "Data",
+   "label": "Nom de la soci\u00e9t\u00e9-choix 2",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "nom_societe_3",
+   "fieldtype": "Data",
+   "label": "Nom de la soci\u00e9t\u00e9-choix 3",
+   "no_copy": 1,
+   "print_hide": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "raison_sociale",
+   "fieldtype": "Select",
+   "label": "Raison sociale (nom soci\u00e9t\u00e9)",
+   "permlevel": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "forme_juridique",
+   "fieldtype": "Select",
+   "label": "Forme juridique",
+   "no_copy": 1,
+   "options": "SARL\nSARL AU\nSA\nSAS\nSNC\nSCS\nEI",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "capital_social",
+   "fieldtype": "Data",
+   "label": "Capital social (en DHS)",
+   "no_copy": 1,
+   "non_negative": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "activite",
+   "fieldtype": "Small Text",
+   "label": "Objet social / Activit\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "adresse_siege",
+   "fieldtype": "Small Text",
+   "label": "Adresse si\u00e8ge social ",
+   "no_copy": 1,
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_adresse",
+   "fieldtype": "Select",
+   "label": "Type d\u2019adresse si\u00e8ge social",
+   "options": "Domicile\nLocal\nBail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bail_details",
+   "fieldtype": "Table",
+   "label": "D\u00e9tails du bail",
+   "options": "Bail details"
+  },
+  {
+   "default": "99 ans",
+   "fieldname": "company_duration",
+   "fieldtype": "Data",
+   "label": "Dur\u00e9e personne morale"
+  },
+  {
+   "fieldname": "founder_name",
+   "fieldtype": "Data",
+   "label": "Nom et pr\u00e9nom associ\u00e9/g\u00e9rant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationalit\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quality",
+   "fieldtype": "Data",
+   "label": "Qualit\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "telephone_founder",
+   "fieldtype": "Phone",
+   "label": "T\u00e9l\u00e9phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_lieu_naissance",
+   "fieldtype": "Small Text",
+   "label": "Date et lieu de naissance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_founder",
+   "fieldtype": "Small Text",
+   "label": "Domicile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cin_founder",
+   "fieldtype": "Data",
+   "label": "CIN / Passeport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "associes",
+   "fieldtype": "Table",
+   "label": "Associ\u00e9s",
+   "options": "Associe"
+  },
+  {
+   "fieldname": "notary_info",
+   "fieldtype": "Small Text",
+   "label": "Nom et adresse du notaire (si besoin)"
+  },
+  {
+   "fieldname": "date_certificat",
+   "fieldtype": "Data",
+   "label": "Date de certificat n\u00e9gatif",
+   "no_copy": 1,
+   "options": "CompanyCreationRequest",
+   "permlevel": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "ville",
+   "fieldtype": "Data",
+   "label": "Ville de la soci\u00e9t\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_creation",
+   "fieldtype": "Data",
+   "label": "Date de d\u00e9but d\u2019activit\u00e9 ",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CompanyCreationRequest",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-10-04 19:50:52.461531",
+ "modified_by": "Administrator",
+ "module": "Company Creation",
+ "name": "CompanyCreationRequest",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Client_KS",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agent Interne",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agent Interne",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
