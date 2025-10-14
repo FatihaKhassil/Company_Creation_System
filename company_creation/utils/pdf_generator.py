@@ -1,4 +1,5 @@
 import frappe
+import os
 from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
@@ -43,7 +44,9 @@ def generate_tp_pdf(docname):
         "adresse_siege": doc.adresse_siege,
         "activite": doc.activite,
     }
-    base_pdf = PdfReader(frappe.get_site_path("public", "files", "tp-template.pdf"))
+    app_path = frappe.get_app_path("company_creation")
+    template_path = os.path.join(app_path, "fixtures", "tp-template.pdf")
+    base_pdf = PdfReader(template_path)
     packet = BytesIO()
     first_page = base_pdf.pages[0]
     width = float(first_page.mediabox.width)
@@ -115,7 +118,9 @@ def generate_rc_pdf(docname):
         }
     }
     # Lecture du modèle PDF
-    base_pdf = PdfReader(frappe.get_site_path("public", "files", "RC-template.pdf"))
+    app_path = frappe.get_app_path("company_creation")
+    template_path = os.path.join(app_path, "fixtures", "RC-template.pdf")
+    base_pdf = PdfReader(template_path)
     output = PdfWriter()
 
     # Remplissage page par page
@@ -199,7 +204,9 @@ def generate_dl_pdf(docname):
     ]
 
 
-    base_pdf = PdfReader(frappe.get_site_path("public", "files", "DL-template.pdf"))
+    app_path = frappe.get_app_path("company_creation")
+    template_path = os.path.join(app_path, "fixtures", "DL-template.pdf")
+    base_pdf = PdfReader(template_path)
     output = PdfWriter()
 
     for page_index, page in enumerate(base_pdf.pages):
