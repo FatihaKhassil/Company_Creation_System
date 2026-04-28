@@ -21,15 +21,13 @@ website_include_js = [
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "company_creation",
-# 		"logo": "/assets/company_creation/logo.png",
-# 		"title": "Company Creation",
-# 		"route": "/company_creation",
-# 		"has_permission": "company_creation.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "company_creation",
+		"title": "Company Creation",
+		"route": "/app/company-creation",
+	}
+]
 
 # Includes in <head>
 # ------------------

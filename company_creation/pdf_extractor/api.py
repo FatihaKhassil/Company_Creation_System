@@ -211,6 +211,9 @@ def check_dependencies():
 def save_extracted_data(data, document_type="Document", filename=""):
     """Sauvegarder les données extraites dans votre DocType 'Document Analysis'."""
     try:
+        if not frappe.has_permission("Document Analysis", ptype="create"):
+            return {"success": False, "error": _("Not permitted to create Document Analysis")}
+
         if isinstance(data, str):
             data = json.loads(data)
 
@@ -249,6 +252,45 @@ def save_extracted_data(data, document_type="Document", filename=""):
 
 
 @frappe.whitelist()
+def save_extracted_table_data(table_data, document_info=None):
+    try:
+        if isinstance(table_data, str):
+            table_data = json.loads(table_data)
+        if not isinstance(table_data, list):
+            return {"success": False, "error": "table_data invalide"}
+
+        if document_info is None:
+            document_info = {}
+        elif isinstance(document_info, str):
+            document_info = json.loads(document_info)
+        elif not isinstance(document_info, dict):
+            document_info = {}
+
+        document_type = document_info.get("document_type", "Document")
+        filename = document_info.get("filename") or document_info.get("document_name") or ""
+
+        result = save_extracted_data(
+            data=table_data,
+            document_type=document_type,
+            filename=filename,
+        )
+        if not result.get("success"):
+            return {"success": False, "error": result.get("error", "Sauvegarde échouée")}
+
+        return {
+            "success": True,
+            "message": result.get("message", "Données sauvegardées"),
+            "doc_name": result.get("doc_name"),
+            "items_count": result.get("items_count", 0),
+        }
+    except json.JSONDecodeError:
+        return {"success": False, "error": "JSON invalide pour table_data ou document_info"}
+    except Exception as e:
+        frappe.log_error(f"save_extracted_table_data: {str(e)}")
+        return {"success": False, "error": str(e)}
+
+
+@frappe.whitelist()
 def get_document_analyses():
     try:
         records = frappe.get_all(
@@ -261,6 +303,22 @@ def get_document_analyses():
     except Exception as e:
         frappe.log_error(f"Erreur get_document_analyses: {str(e)}")
         return {'success': False, 'error': str(e)}
+
+
+@frappe.whitelist()
+def get_saved_extractions():
+    try:
+        result = get_document_analyses()
+        if not result.get("success"):
+            return {
+                "success": False,
+                "error": result.get("error", "Erreur récupération analyses"),
+                "extractions": [],
+            }
+        return {"success": True, "extractions": result.get("records", [])}
+    except Exception as e:
+        frappe.log_error(f"get_saved_extractions: {str(e)}")
+        return {"success": False, "error": str(e), "extractions": []}
 
 
 @frappe.whitelist()
@@ -280,8 +338,47 @@ def get_extraction_details(extraction_name):
 
 
 @frappe.whitelist()
+def load_extraction_data(analysis_name):
+    try:
+        if not analysis_name:
+            return {"success": False, "error": "analysis_name manquant"}
+
+        result = get_extraction_details(extraction_name=analysis_name)
+        if not result.get("success"):
+            return {"success": False, "error": result.get("error", "Extraction introuvable")}
+
+        analysis = result.get("analysis") or {}
+        items = result.get("items") or []
+
+        table_data = []
+        for item in items:
+            table_data.append(
+                {
+                    "category": item.get("category") or "Données clés",
+                    "field": item.get("field_name") or "",
+                    "value": item.get("field_value") or "",
+                    "type": item.get("field_type") or "text",
+                }
+            )
+
+        return {
+            "success": True,
+            "document_type": analysis.get("document_type") or "Document",
+            "confidence": analysis.get("confidence_score") or 0.9,
+            "table_data": table_data,
+            "raw_text": analysis.get("raw_text") or "",
+            "analysis_name": analysis_name,
+        }
+    except Exception as e:
+        frappe.log_error(f"load_extraction_data: {str(e)}")
+        return {"success": False, "error": str(e)}
+
+
+@frappe.whitelist()
 def delete_extraction_item(item_name):
     try:
+        if not frappe.has_permission("Extracted Data Item", ptype="delete"):
+            return {"success": False, "error": _("Not permitted to delete Extracted Data Item")}
         frappe.delete_doc("Extracted Data Item", item_name)
         frappe.db.commit()
         return {'success': True, 'message': 'Champ supprimé'}
@@ -293,6 +390,8 @@ def delete_extraction_item(item_name):
 def update_extraction_item(item_name, field_value):
     try:
         doc = frappe.get_doc("Extracted Data Item", item_name)
+        if not doc.has_permission("write"):
+            return {"success": False, "error": _("Not permitted to modify this Extracted Data Item")}
         doc.field_value = field_value
         doc.save()
         frappe.db.commit()
@@ -376,6 +475,8 @@ def create_doctype_record(target_doctype, data):
 
     if not target_doctype:
         return {"success": False, "error": "target_doctype manquant"}
+    if not frappe.has_permission(target_doctype, ptype="create"):
+        return {"success": False, "error": _("Not permitted to create records in this DocType")}
 
     doc = frappe.get_doc({"doctype": target_doctype})
 

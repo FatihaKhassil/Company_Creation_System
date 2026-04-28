@@ -1,0 +1,15 @@
+include *.md
+include *.txt
+include *.toml
+recursive-include company_creation *.css
+recursive-include company_creation *.csv
+recursive-include company_creation *.html
+recursive-include company_creation *.ico
+recursive-include company_creation *.js
+recursive-include company_creation *.json
+recursive-include company_creation *.md
+recursive-include company_creation *.png
+recursive-include company_creation *.py
+recursive-include company_creation *.svg
+recursive-include company_creation *.txt
+recursive-include company_creation *.pdf

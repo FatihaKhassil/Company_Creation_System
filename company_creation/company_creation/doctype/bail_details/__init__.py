@@ -1,0 +1,1 @@
+"""Bail details DocType package."""

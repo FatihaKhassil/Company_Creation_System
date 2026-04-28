@@ -1,0 +1,1 @@
+"""Associe DocType package."""

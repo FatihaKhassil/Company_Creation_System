@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Baildetails(Document):
+class BailDetails(Document):
 	pass

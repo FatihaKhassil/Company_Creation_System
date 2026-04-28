@@ -5,7 +5,7 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestPDFExtractionSettings(FrappeTestCase):
+class TestBailDetails(FrappeTestCase):
 	def test_doctype_is_registered(self):
-		meta = frappe.get_meta("PDF Extraction Settings")
-		self.assertEqual(meta.name, "PDF Extraction Settings")
+		meta = frappe.get_meta("Bail details")
+		self.assertEqual(meta.name, "Bail details")
