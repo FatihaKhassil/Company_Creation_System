@@ -163,8 +163,8 @@ PDF templates used by the generation utilities are shipped in:
 
 ## Author
 
-This project was developed by **Fatiha KHASSIL**, a student at **ENSIAS** (École Nationale
-Supérieure d'Informatique et d'Analyse des Systèmes), D2S track, as part of her first-year
+This project was developed by me  **Fatiha KHASSIL**, a student at **ENSIAS** (École Nationale
+Supérieure d'Informatique et d'Analyse des Systèmes), D2S track, as part of my first-year
 internship (PFA) at **KaSoft**.
 
 - Supervised by: Mr. FAIZ Kamal
