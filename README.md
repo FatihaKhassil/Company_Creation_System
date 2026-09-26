@@ -62,8 +62,7 @@ legal documents are generated automatically.
 - Secure archiving of generated documents.
 
 ## Architecture Overview
-
-<!-- TODO: add the general architecture diagram here -->
+<img width="552" height="760" alt="image" src="https://github.com/user-attachments/assets/c79b70f6-4979-4c36-921b-8d3282da9c39" />
 
 ## Tech Stack
 
@@ -171,6 +170,3 @@ internship (PFA) at **KaSoft**.
 - Supervised by: Mr. FAIZ Kamal
 - Academic year: 2024–2025
 
-## License
-
-To be defined according to KaSoft's terms.
